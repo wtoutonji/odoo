@@ -6,14 +6,14 @@
 # Mustafa Rawi <mustafa@mrawi.com>, 2024
 # Tiffany Chang, 2024
 # Martin Trigaux, 2024
-# Wil Odoo, 2024
+# Wil Odoo, 2025
 # Malaz Abuidris <msea@odoo.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-19 20:37+0000\n"
+"POT-Creation-Date: 2025-05-14 20:48+0000\n"
 "PO-Revision-Date: 2024-09-25 09:41+0000\n"
 "Last-Translator: Malaz Abuidris <msea@odoo.com>, 2025\n"
 "Language-Team: Arabic (https://app.transifex.com/odoo/teams/41243/ar/)\n"
@@ -2866,6 +2866,12 @@ msgstr "إهمال كافة التغييرات "
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "Discount rate of a security based on price."
 msgstr "معدل خصم سند بناء على السعر. "
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "Display missing cells only"
+msgstr "عرض الخلايا المفقودة فقط "
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -7291,13 +7297,13 @@ msgstr "يجب أن تكون القاعدة (%s) بين 2 و 36 شاملة. "
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The base (%s) must be strictly positive."
-msgstr ""
+msgstr "يجب أن يكون الأساس (%s) قيمة موجبة فقط. "
 
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "The base must be different from 1."
-msgstr ""
+msgstr "يجب أن يكون الأساس مختلفاً عن 1. "
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -10583,6 +10589,12 @@ msgstr ""
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
+msgid "This pivot has no cell missing on this sheet"
+msgstr "لا يحتوي هذا الجدول المحوري على خلايا مفقودة في هذه الورقة "
+
+#. module: spreadsheet
+#. odoo-javascript
+#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "This pivot is not used"
 msgstr "هذا المحور غير مستخدَم "
 
@@ -10681,7 +10693,7 @@ msgstr "معاملة بطاقات العناوين كنصوص "
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "Trend line"
-msgstr ""
+msgstr "خط الاتجاه "
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11540,32 +11552,8 @@ msgstr "يحتاج [[FUNCTION_NAME]] إلى قيمتين على الأقل لك�
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "activeSheet"
-msgstr "activeSheet"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "allSheets"
-msgstr "allSheets"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "and"
 msgstr "و"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "arrow"
-msgstr "سهم "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "asc"
-msgstr "asc"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11582,12 +11570,6 @@ msgstr "أقل من أو مساوي لـ "
 #. module: spreadsheet
 #. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "bottom"
-msgstr "الأسفل "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "code"
 msgstr "كود"
 
@@ -11596,18 +11578,6 @@ msgstr "كود"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "default:"
 msgstr "الافتراضي: "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "desc"
-msgstr "desc"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "difference"
-msgstr "الفرق "
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11641,45 +11611,9 @@ msgstr "مثال: A1:A2 "
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/global_filters/components/filter_date_value/filter_date_value.xml:0
-msgid "empty"
-msgstr "فارغ "
-
-#. module: spreadsheet
-#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "exact date"
 msgstr "التاريخ الدقيق "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "exponential"
-msgstr "أسّي"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "false"
-msgstr "خاطئ"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "formula"
-msgstr "الصيغة "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "ge"
-msgstr "ge"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "gt"
-msgstr "gt"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11698,24 +11632,6 @@ msgstr "خلال الأسبوع الماضي "
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "in the past year"
 msgstr "خلال العام الماضي "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "left"
-msgstr "اليسار "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "linear"
-msgstr "خطي "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "logarithmic"
-msgstr "لوغاريتمي "
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11740,18 +11656,6 @@ msgstr "صفوف أكثر في الأسفل "
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "negative"
 msgstr "سالب "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "none"
-msgstr "لا شيء "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "number"
-msgstr "عدد "
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11785,39 +11689,9 @@ msgstr "قبل عام "
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "percentage"
-msgstr "النسبة "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "percentile"
-msgstr "النسبة "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "plainText"
-msgstr "plainText"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "polynomial"
-msgstr "متعدد الحدود "
-
-#. module: spreadsheet
-#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "positive"
 msgstr "موجب "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "progress"
-msgstr "التقدم "
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11833,21 +11707,9 @@ msgstr "يجب أن يكون لـ return_range نفس أبعاد lookup_range. "
 
 #. module: spreadsheet
 #. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "right"
-msgstr "اليمين "
-
-#. module: spreadsheet
-#. odoo-javascript
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "search_mode should be a value in [-1, 1, -2, 2]."
 msgstr "يجب أن يكون لـ search_mode قيمة في [-1, 1, -2, 2]. "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "specificRange"
-msgstr "specificRange"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11860,12 +11722,6 @@ msgstr "يجب أن يكون start_date (%s) في أو قبل end_date (%s). "
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
 msgid "symbol"
 msgstr "رمز "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "text"
-msgstr "نص"
 
 #. module: spreadsheet
 #. odoo-javascript
@@ -11898,24 +11754,6 @@ msgstr "اليوم"
 #: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.js:0
 msgid "tomorrow"
 msgstr "غدًا"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "top"
-msgstr "الأعلى "
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "true"
-msgstr "صحيح"
-
-#. module: spreadsheet
-#. odoo-javascript
-#: code:addons/spreadsheet/static/src/o_spreadsheet/o_spreadsheet.xml:0
-msgid "value"
-msgstr "قيمة"
 
 #. module: spreadsheet
 #. odoo-javascript

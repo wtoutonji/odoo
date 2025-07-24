@@ -6,16 +6,16 @@
 # JH CHOI <hwangtog@gmail.com>, 2024
 # Tiffany Chang, 2024
 # Daye Jeong, 2025
-# Sarah Park, 2025
 # Wil Odoo, 2025
+# Sarah Park, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-07 20:36+0000\n"
+"POT-Creation-Date: 2025-05-14 20:46+0000\n"
 "PO-Revision-Date: 2024-09-25 09:41+0000\n"
-"Last-Translator: Wil Odoo, 2025\n"
+"Last-Translator: Sarah Park, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/odoo/teams/41243/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -898,6 +898,7 @@ msgstr "총액"
 #. module: point_of_sale
 #. odoo-javascript
 #: code:addons/point_of_sale/static/src/app/utils/qr_code_popup/qr_code_popup.xml:0
+#: code:addons/point_of_sale/static/src/customer_display/customer_facing_qr.xml:0
 msgid "Amount:"
 msgstr "금액:"
 
@@ -5280,6 +5281,7 @@ msgstr "쿠폰 번호를 등록하세요."
 #. module: point_of_sale
 #. odoo-javascript
 #: code:addons/point_of_sale/static/src/app/utils/qr_code_popup/qr_code_popup.js:0
+#: code:addons/point_of_sale/static/src/customer_display/customer_facing_qr.js:0
 msgid "Please scan the QR code with %s"
 msgstr "QR 코드를 %s로 스캔하세요."
 
@@ -6076,6 +6078,7 @@ msgstr "보라색"
 #. module: point_of_sale
 #. odoo-javascript
 #: code:addons/point_of_sale/static/src/app/utils/qr_code_popup/qr_code_popup.xml:0
+#: code:addons/point_of_sale/static/src/customer_display/customer_facing_qr.xml:0
 msgid "QR Code"
 msgstr "QR 코드"
 
@@ -7957,6 +7960,14 @@ msgstr ""
 "이 주문에는 이미 %s 관련 환불 내역이 있습니다. 연결되어 있는 고객을 변경할 수 없습니다. 새 고객에 대한 새로운 주문을 생성합니다."
 
 #. module: point_of_sale
+#. odoo-python
+#: code:addons/point_of_sale/models/pos_order.py:0
+msgid ""
+"This order has already been paid. You cannot set it back to draft or edit "
+"it."
+msgstr "이 주문은 이미 결제가 완료되었습니다. 초안으로 되돌리거나 수정할 수 없습니다."
+
+#. module: point_of_sale
 #. odoo-javascript
 #: code:addons/point_of_sale/static/src/app/screens/receipt_screen/receipt_screen.js:0
 msgid ""
@@ -8067,7 +8078,7 @@ msgstr "마감 대기"
 #. odoo-javascript
 #: code:addons/point_of_sale/static/src/app/screens/receipt_screen/receipt/order_receipt.xml:0
 msgid "To Pay"
-msgstr "지불하기"
+msgstr "결제 대기 중"
 
 #. module: point_of_sale
 #. odoo-javascript
@@ -8104,7 +8115,7 @@ msgstr "적절한 잔액 후속 조치를 위해 청구서를 생성하거나 �
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_order__to_invoice
 msgid "To invoice"
-msgstr "발행할 청구서"
+msgstr "청구서 발행 대기"
 
 #. module: point_of_sale
 #: model_terms:ir.actions.act_window,help:point_of_sale.action_pos_payment_form
@@ -8760,6 +8771,14 @@ msgstr "세션이 열려 있는 동안에는 POS 카테고리를 삭제할 수 �
 
 #. module: point_of_sale
 #. odoo-python
+#: code:addons/point_of_sale/models/account_cash_rounding.py:0
+msgid ""
+"You cannot delete a rounding method that is used in a Point of Sale "
+"configuration."
+msgstr "POS 환경설정에서 사용 중인 반올림 방식은 삭제할 수 없습니다."
+
+#. module: point_of_sale
+#. odoo-python
 #: code:addons/point_of_sale/models/pos_payment.py:0
 msgid "You cannot edit a payment for a posted order."
 msgstr "게시가 완료된 주문서는 결제를 수정할 수 없습니다."
@@ -8769,15 +8788,6 @@ msgstr "게시가 완료된 주문서는 결제를 수정할 수 없습니다."
 #: code:addons/point_of_sale/models/pos_order.py:0
 msgid "You cannot invoice orders belonging to different companies."
 msgstr "다른 회사의 주문에 대해서는 청구서를 발행할 수 없습니다."
-
-#. module: point_of_sale
-#. odoo-python
-#: code:addons/point_of_sale/models/account_cash_rounding.py:0
-#, python-format
-msgid ""
-"You cannot delete a rounding method that is used in a Point of Sale "
-"configuration."
-msgstr "POS 환경설정에서 사용 중인 반올림 방식은 삭제할 수 없습니다."
 
 #. module: point_of_sale
 #. odoo-python
@@ -8929,12 +8939,6 @@ msgid "discount"
 msgstr "할인"
 
 #. module: point_of_sale
-#. odoo-javascript
-#: code:addons/point_of_sale/static/src/app/screens/receipt_screen/receipt_screen.xml:0
-msgid "e.g. 0123456789"
-msgstr "예: 0123456789"
-
-#. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.pos_payment_method_view_form
 msgid "e.g. Cash"
 msgstr "예: 현금"
@@ -8958,12 +8962,6 @@ msgstr "예를 들어 반품 정책, 우리와 함께 쇼핑해 주셔서 감사
 #: model_terms:ir.ui.view,arch_db:point_of_sale.product_pos_category_form_view
 msgid "e.g. Soft Drinks"
 msgstr "예: 청량 음료"
-
-#. module: point_of_sale
-#. odoo-javascript
-#: code:addons/point_of_sale/static/src/app/screens/receipt_screen/receipt_screen.xml:0
-msgid "e.g. john.doe@mail.com"
-msgstr "예: john.doe@mail.com"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.pos_config_view_form
@@ -9102,19 +9100,3 @@ msgstr "버튼을 눌러 활성화합니다."
 #: model_terms:ir.ui.view,arch_db:point_of_sale.report_invoice_document
 msgid "using"
 msgstr "사용"
-
-#. module: point_of_sale
-#. odoo-javascript
-#: code:addons/point_of_sale/static/src/app/debug/debug_widget.xml:0
-msgid "{{ !barcodeReader ? 'No nomenclature' : '' }}"
-msgstr "{{ !barcodeReader ? 'No nomenclature' : '' }}"
-
-#. module: point_of_sale
-#. odoo-javascript
-#: code:addons/point_of_sale/static/src/app/screens/product_screen/order_summary/order_summary.xml:0
-msgid ""
-"{{ line.has_valid_product_lot() ? 'Valid product lot' : 'Invalid product "
-"lot'}}"
-msgstr ""
-"{{ line.has_valid_product_lot() ? 'Valid product lot' : 'Invalid product "
-"lot'}}"

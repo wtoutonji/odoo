@@ -241,8 +241,20 @@ registry.category("web_tour.tours").add("CashClosingDetails", {
             ProductScreen.closeWithCashAmount("50.0"),
             ProductScreen.cashDifferenceIs("-1.00"),
             Dialog.confirm("Close Register"),
-            Dialog.confirm("Proceed Anyway", ".btn-primary"),
-            Chrome.clickBtn("Backend"),
+            {
+                trigger: ".modal .btn-primary:contains(Proceed Anyway)",
+                run: "click",
+                expectUnloadPage: true,
+            },
+            {
+                trigger: "button:contains(backend)",
+                run: "click",
+                expectUnloadPage: true,
+            },
+            {
+                trigger: "body",
+                expectUnloadPage: true,
+            },
             ProductScreen.lastClosingCashIs("50.00"),
         ].flat(),
 });
@@ -560,6 +572,22 @@ registry.category("web_tour.tours").add("test_draft_orders_not_syncing", {
             PaymentScreen.clickPaymentMethod("Bank"),
             PaymentScreen.clickValidate(),
             ReceiptScreen.isShown(),
+            Chrome.endTour(),
+        ].flat(),
+});
+
+registry.category("web_tour.tours").add("test_one_attribute_value_scan_barcode", {
+    steps: () =>
+        [
+            Chrome.startPoS(),
+            Dialog.confirm("Open Register"),
+
+            scan_barcode("1234567"),
+            ProductScreen.selectedOrderlineHas("Product Test (Red)", "1.0"),
+
+            scan_barcode("1234568"),
+            ProductScreen.selectedOrderlineHas("Product Test (Blue)", "1.0"),
+
             Chrome.endTour(),
         ].flat(),
 });
