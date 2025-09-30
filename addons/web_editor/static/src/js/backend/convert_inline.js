@@ -237,7 +237,7 @@ function bootstrapToTable(editable) {
             //    by sharing the available space between them.
             const flexColumns = bootstrapColumns.filter(column => !/\d/.test(column.className.match(RE_COL_MATCH)[0] || '0'));
             const colTotalSize = bootstrapColumns.map(child => _getColumnSize(child) + _getColumnOffsetSize(child)).reduce((a, b) => a + b, 0);
-            const colSize = Math.max(1, Math.round((12 - colTotalSize) / flexColumns.length));
+            const colSize = Math.max(1, Math.floor((12 - (colTotalSize)) / flexColumns.length));
             for (const flexColumn of flexColumns) {
                 flexColumn.classList.remove(flexColumn.className.match(RE_COL_MATCH)[0].trim());
                 flexColumn.classList.add(`col-${colSize}`);
@@ -1725,7 +1725,11 @@ function _getHeight(element) {
  */
 function _hideForOutlook(node, onlyHideTag = false) {
     if (!onlyHideTag) {
-        node.setAttribute('style', `${node.getAttribute('style') || ''} mso-hide: all;`.trim());
+        let style = (node.getAttribute("style") || "").trim();
+        if (style && !style.endsWith(";")) {
+            style += ";";
+        }
+        node.setAttribute("style", `${style} mso-hide: all;`);
     }
     node[onlyHideTag === 'closing' ? 'append' : 'before'](document.createComment('[if !mso]><!'));
     node[onlyHideTag === 'opening' ? 'prepend' : 'after'](document.createComment('<![endif]'));
@@ -1844,7 +1848,10 @@ function correctBorderAttributes(style) {
         return correctedStyle;
     }
 
-    return style;
+    if (/border-style\s*:/i.test(style)) {
+        return style;
+    }
+    return style.trim().replace(/;?$/, "; border-style: solid;");
 }
 
 export default {
