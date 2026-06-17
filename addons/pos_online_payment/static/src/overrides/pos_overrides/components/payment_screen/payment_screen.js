@@ -115,6 +115,7 @@ patch(PaymentScreen.prototype, {
                         return false;
                     }
 
+                    await this.pos.syncAllOrders({ orders: [this.currentOrder] });
                     onlinePaymentLine.set_payment_status("waiting");
                     this.currentOrder.select_paymentline(onlinePaymentLine);
                     const onlinePaymentData = {
@@ -131,6 +132,7 @@ patch(PaymentScreen.prototype, {
                         {
                             onClose: () => {
                                 onlinePaymentLine.onlinePaymentResolver(false);
+                                this.currentOrder.onlinePaymentData = {};
                             },
                         }
                     );
@@ -231,13 +233,13 @@ patch(PaymentScreen.prototype, {
         }
 
         if (isInvoiceRequested) {
-            if (!orderJSON[0].raw.account_move) {
+            if (!orderJSON[0].account_move) {
                 this.dialog.add(AlertDialog, {
                     title: _t("Invoice could not be generated"),
                     body: _t("The invoice could not be generated."),
                 });
             } else {
-                await this.invoiceService.downloadPdf(orderJSON[0].raw.account_move);
+                await this.invoiceService.downloadPdf(orderJSON[0].account_move);
             }
         }
 
